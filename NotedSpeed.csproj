@@ -8,8 +8,8 @@
     <ProjectGuid>{FAE6AA17-BD21-4078-8422-462131744C00}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SimpleVelocity</RootNamespace>
-    <AssemblyName>SimpleVelocity</AssemblyName>
+    <RootNamespace>NotedSpeed</RootNamespace>
+    <AssemblyName>NotedSpeed</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
