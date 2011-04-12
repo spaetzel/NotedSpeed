@@ -1,20 +1,42 @@
 ﻿<Window x:Class="NotedSpeed.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Height="346" Width="670">
+        Title="MainWindow" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Height="620" Width="704">
+    <Window.Resources>
+        <DataTemplate x:Key="listBoxTemplate">
+            <StackPanel Margin="3">
+                <DockPanel >
+                    <TextBlock FontWeight="Bold" Text="Title:"
+                  DockPanel.Dock="Left"
+                  Margin="5,0,10,0"/>
+                    <TextBlock Text="  " />
+                    <TextBlock Text="{Binding Title}" Foreground="Green" FontWeight="Bold" />
+                </DockPanel>
+                <DockPanel >
+                    <TextBlock FontWeight="Bold" Text="Modified:" Foreground ="DarkOrange"
+                  DockPanel.Dock="Left"
+                  Margin="5,0,5,0"/>
+                    <TextBlock Text="{Binding Modified}" />
+
+                </DockPanel>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="20*" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="80*" />
+            <RowDefinition Height="150
+                           " />
+          
+            <RowDefinition Height="400" />
         </Grid.RowDefinitions>
-        <TextBox HorizontalAlignment="Left" Name="textBox1" VerticalAlignment="Top" FontSize="16" Width="624" Margin="12,0,0,0" />
-        <ListBox Margin="12,0" Name="listBox1" VerticalAlignment="Top" Grid.Row="1" />
-        <GridSplitter Height="10" HorizontalAlignment="Left" Name="gridSplitter1" VerticalAlignment="Top" ResizeBehavior="PreviousAndNext"  ResizeDirection="Rows" Grid.Row="2" />
-        <TextBox Grid.Row="3" HorizontalAlignment="Left" Margin="12,0,0,0" Name="textBox2" VerticalAlignment="Top" AcceptsReturn="True"  />
+        <TextBox HorizontalAlignment="Left" Name="searchBox" VerticalAlignment="Top" FontSize="16" Width="658" Margin="12,0,0,0" TextChanged="searchBox_TextChanged" />
+        <ListBox Name="searchResults" VerticalAlignment="Top" Grid.Row="1" Height="150" ItemTemplate="{StaticResource listBoxTemplate}" />
+        <TextBox Grid.Row="2" HorizontalAlignment="Left" Margin="-1,0,0,0" Name="body" VerticalAlignment="Top" AcceptsReturn="True" Height="404" Width="683" />
     </Grid>
+
 </Window>
